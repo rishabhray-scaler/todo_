@@ -8,3 +8,15 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+/* small styles so button_to looks like links */
+.link-like {
+	background: none;
+	border: none;
+	padding: 0;
+	color: #06c;
+	text-decoration: underline;
+	cursor: pointer;
+	font: inherit;
+}
+.trash-btn { color: #c00; }
