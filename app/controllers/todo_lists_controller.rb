@@ -60,11 +60,11 @@ class TodoListsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_todo_list
-      @todo_list = TodoList.find(params.expect(:id))
+      @todo_list = TodoList.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def todo_list_params
-      params.expect(todo_list: [ :title, :description ])
+      params.require(:todo_list).permit(:title, :description)
     end
 end

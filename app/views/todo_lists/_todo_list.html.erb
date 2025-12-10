@@ -1,12 +1,12 @@
-<div id="<%= dom_id todo_list %>">
-  <div>
-    <strong>Title:</strong>
-    <%= todo_list.title %>
+<div id="<%= dom_id todo_list %>" class="list-row">
+  <div class="title-row">
+    <strong class="list-label list-title-label">Title:</strong>
+    <span class="list-title-text"><%= todo_list.title %></span>
   </div>
 
-  <div>
-    <strong>Description:</strong>
-    <%= todo_list.description %>
+  <div class="desc-row">
+    <strong class="list-label list-desc-label">Description:</strong>
+    <span class="list-desc-text"><%= todo_list.description %></span>
   </div>
 
 </div>

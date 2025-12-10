@@ -1,16 +1,32 @@
-<p style="color: green"><%= notice %></p>
+<p id="notice" style="color: green"><%= notice %></p>
 
 <% content_for :title, "Todo lists" %>
 
-<h1>Todo lists</h1>
+<div class="container">
+  <div class="hero">
+    <h1 class="todo_list_title">Ruby on Rails<br><span style="font-size:0.6em; display:block; margin-top:.5rem;">Advanced Beginner</span></h1>
+    <p class="todo_list_sub_title">Stuff I need to do for my ruby on rails Advanced Beginner challenge</p>
 
-<div id="todo_lists">
-  <% @todo_lists.each do |todo_list| %>
-    <%= render todo_list %>
-    <p>
-      <%= link_to "Show this todo list", todo_list %>
-    </p>
-  <% end %>
+    <div class="hero-new-todo">
+      <%= form_with model: TodoList.new, url: todo_lists_path, local: true, class: 'new-todo-form' do |f| %>
+        <div class="new-todo-row">
+          <%= f.text_field :title, placeholder: 'New todo list title', required: true, class: 'new-todo-input' %>
+          <%= f.submit 'Create', class: 'btn-ghost new-todo-submit' %>
+        </div>
+        <!-- description intentionally omitted from the homepage quick-create form -->
+      <% end %>
+    </div>
+  </div>
+
+  <div class="index_row">
+    <h2>Your lists</h2>
+    <div id="todo_lists">
+      <% @todo_lists.each do |todo_list| %>
+        <%= render todo_list %>
+        <p>
+          <%= link_to "Show this todo list", todo_list %>
+        </p>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New todo list", new_todo_list_path %>
