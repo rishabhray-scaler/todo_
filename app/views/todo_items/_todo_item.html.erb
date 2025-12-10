@@ -1,0 +1,10 @@
+<p>
+  <%= todo_item.content %>
+
+  <!-- visible Delete label with trash emoji, safe path & method -->
+  <%= link_to "🗑️ Delete",
+              [todo_item.todo_list, todo_item],
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              style: "margin-left:8px; color: #c00; text-decoration: none;" %>
+</p>
